@@ -10,10 +10,14 @@
 sum = int(input('Введите сумму чисел -> '))
 mult = int(input('Введите произведение  чисел -> '))
 
-# num1 = 0
-# num2 = 0
+
+stop = 0 
 for num1 in range(sum):
+    if stop == 1:
+        break
     for num2 in range(sum):
-        if(num1+num2 == sum) and (num1*num2 == mult): #and (num1,num2 <= 1000):
+        if(num1+num2 == sum) and (num1*num2 == mult) and (num1,num2 <= 1000):
             print(num1, num2)
-            break
+            stop = 1
+else:
+    print('Введены неверные данные')            
